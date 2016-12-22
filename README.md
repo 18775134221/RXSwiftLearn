@@ -41,3 +41,17 @@
            _ = NotificationCenter.default.rx.notification(Notification.Name(rawValue: "message"), object: nil).subscribe { (noti) in
             print("收到通知")
         }
+        
+# 四、绑定事件
+
+// 绑定手势点击
+
+        _ = redView.btn.rx.tap.subscribe { (tapGes) in
+            print("123");
+        }
+      
+ // 绑定按钮的事件
+ 
+         _ = redView.btn.rx.controlEvent(UIControlEvents.touchUpInside).subscribe { (sender) in
+           print("\(sender.element!)")
+        }
