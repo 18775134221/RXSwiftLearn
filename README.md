@@ -22,7 +22,7 @@
         print("\(str.element!)")
     }
     
- # 二、KVO
+# 二、KVO
  
          let aage = Variable(age)
         _ = aage.asObservable().subscribe(onNext: { (temp) in
