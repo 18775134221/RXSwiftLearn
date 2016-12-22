@@ -56,7 +56,7 @@
            print("\(sender.element!)")
         }
         
- # ZIP (两个subject都改变了才会触发)
+# ZIP (两个subject都改变了才会触发)
  
         let stringSubject = PublishSubject<String>()
         let intSubject = PublishSubject<Int>()
