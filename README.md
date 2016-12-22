@@ -56,8 +56,10 @@
            print("\(sender.element!)")
         }
         
-# ZIP (两个subject都改变了才会触发)
+# 五、信号合并 ZIP (两个subject都改变了才会触发) combineLatest
  
+// 第一种zip方式
+
         let stringSubject = PublishSubject<String>()
         let intSubject = PublishSubject<Int>()
         let disposeBag = DisposeBag()
@@ -78,3 +80,19 @@
         //
         // 🅰️ 1
         // 🅱️ 2
+        
+// 第二种combineLatest方式
+
+        let stringSubject = PublishSubject<String>()
+        let intSubject = PublishSubject<Int>()
+        // let disposeBag = DisposeBag()
+        
+        _ = Observable.combineLatest(stringSubject, intSubject) {
+            "\($0) \($1)"
+            }
+            .subscribe {
+                print("\($0.element!)")
+        }
+        
+        stringSubject.onNext("text")
+        intSubject.onNext(1)
