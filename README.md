@@ -21,4 +21,18 @@
     _ = redView.subject.subscribe { (str) in
         print("\(str.element!)")
     }
+    
+ # 二、KVO
+ 
+         let aage = Variable(age)
+        _ = aage.asObservable().subscribe(onNext: { (temp) in
+            print("\(temp?.hashValue)")
+        })
+        aage.value = 100
+        
+        _ = view.rx.observe(CGRect.self, "bounds").subscribe { (rect) in
+            print("\(rect)")
+        }
+        
+# 三、通知
        
