@@ -55,3 +55,25 @@
          _ = redView.btn.rx.controlEvent(UIControlEvents.touchUpInside).subscribe { (sender) in
            print("\(sender.element!)")
         }
+        
+ # ZIP (两个subject都改变了才会触发)
+ 
+let stringSubject = PublishSubject<String>()
+let intSubject = PublishSubject<Int>()
+
+Observable.zip(stringSubject, intSubject) { stringElement, intElement in
+	"\(stringElement) \(intElement)"
+	}
+	.subscribe(onNext: { print($0) })
+	.addDisposableTo(disposeBag)
+
+stringSubject.onNext("🅰️")
+stringSubject.onNext("🅱️")
+
+intSubject.onNext(1)
+intSubject.onNext(2)
+
+// output
+//
+// 🅰️ 1
+// 🅱️ 2
