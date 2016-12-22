@@ -35,4 +35,9 @@
         }
         
 # 三、通知
-       
+
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "message"), object: nil)
+   
+           _ = NotificationCenter.default.rx.notification(Notification.Name(rawValue: "message"), object: nil).subscribe { (noti) in
+            print("收到通知")
+        }
