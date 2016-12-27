@@ -1,13 +1,10 @@
 # RXSwiftLearn
 学习swift FRP函数式编程
-
 # 需要导入的框架
-
--RXSwift
--RXCocoa
+- RXSwift<br>
+- RXCocoa<br>
 
 # 一、代理
-
 ## 发送（subject是一个可以接收也可以发送的对象）
 
     let subject = PublishSubject<String>()
@@ -43,7 +40,6 @@
         }
         
 # 四、绑定事件
-
 ## 绑定手势点击
 
         _ = redView.btn.rx.tap.subscribe { (tapGes) in
@@ -57,7 +53,6 @@
         }
         
 # 五、信号合并 ZIP (两个subject都改变了才会触发) combineLatest
- 
 ## 第一种zip方式
 
         let stringSubject = PublishSubject<String>()
