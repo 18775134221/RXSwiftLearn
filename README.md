@@ -1,18 +1,18 @@
 # RXSwiftLearn
 学习swift FRP函数式编程
-# 需要导入的框架
+### 需要导入的框架
 - RXSwift<br>
 - RXCocoa<br>
 
 # 一、代理
-## 发送（subject是一个可以接收也可以发送的对象）
+### 发送（subject是一个可以接收也可以发送的对象）
 
     let subject = PublishSubject<String>()
     @IBAction func testBtnClick() {
         subject.onNext("测试")
     }
     
-## 接收
+### 接收
     
     // _替代的内容 let disposable: Disposable
     _ = redView.subject.subscribe { (str) in
@@ -40,20 +40,20 @@
         }
         
 # 四、绑定事件
-## 绑定手势点击
+### 绑定手势点击
 
         _ = redView.btn.rx.tap.subscribe { (tapGes) in
             print("123");
         }
       
-## 绑定按钮的事件
+### 绑定按钮的事件
  
          _ = redView.btn.rx.controlEvent(UIControlEvents.touchUpInside).subscribe { (sender) in
            print("\(sender.element!)")
         }
         
 # 五、信号合并 ZIP (两个subject都改变了才会触发) combineLatest
-## 第一种zip方式
+### 第一种zip方式
 
         let stringSubject = PublishSubject<String>()
         let intSubject = PublishSubject<Int>()
@@ -76,7 +76,7 @@
         // 🅰️ 1
         // 🅱️ 2
         
-## 第二种combineLatest方式
+### 第二种combineLatest方式
 
         let stringSubject = PublishSubject<String>()
         let intSubject = PublishSubject<Int>()
