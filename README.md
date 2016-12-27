@@ -13,9 +13,8 @@
     }
     
 ### 接收
-    
-    // _替代的内容 let disposable: Disposable
-    _ = redView.subject.subscribe { (str) in
+     _替代的内容 let disposable: Disposable
+     _ = redView.subject.subscribe { (str) in
         print("\(str.element!)")
     }
     
