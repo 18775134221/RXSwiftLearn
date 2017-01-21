@@ -129,6 +129,22 @@ class ViewController: UIViewController {
            print("\(sender.element!)")
         }
     }
+    
+    // MARK: - 数组和字典遍历
+    private func arrayAndDict () {
+        let array: NSArray = ["name","name1","name2"]
+        let arrayMakeItertor = array.makeIterator()
+        while let sub = arrayMakeItertor.next() {
+            print("数组数据\(sub)")
+        }
+        
+        let dict: NSDictionary = ["key":"name","key1":"name1"]
+        let dictMakeItertor = dict.makeIterator()
+        while let (key,value) = dictMakeItertor.next() {
+            print("\(key) + \(value)")
+        }
+        
+    }
 
 }
 
