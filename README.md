@@ -91,6 +91,7 @@
         intSubject.onNext(1)
         
  #  五、数组和字典的迭代器
+ ```
          let array: NSArray = ["name","name1","name2"]
         let arrayMakeItertor = array.makeIterator()
         while let sub = arrayMakeItertor.next() {
@@ -102,3 +103,4 @@
         while let (key,value) = dictMakeItertor.next() {
             print("\(key) + \(value)")
         }
+```
