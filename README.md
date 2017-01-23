@@ -89,3 +89,16 @@
         
         stringSubject.onNext("text")
         intSubject.onNext(1)
+        
+ #  五、数组和字典的迭代器
+         let array: NSArray = ["name","name1","name2"]
+        let arrayMakeItertor = array.makeIterator()
+        while let sub = arrayMakeItertor.next() {
+            print("数组数据\(sub)")
+        }
+        
+        let dict: NSDictionary = ["key":"name","key1":"name1"]
+        let dictMakeItertor = dict.makeIterator()
+        while let (key,value) = dictMakeItertor.next() {
+            print("\(key) + \(value)")
+        }
